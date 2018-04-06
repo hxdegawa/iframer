@@ -1,0 +1,122 @@
+body{
+  margin: 0;
+  background-color: #111F4D;
+  
+  *{
+    opacity: 1;
+  }
+  
+  main{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    background-color: #F2F4F7;
+    color: #111F4D;
+    h1{
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .nextbutton{
+      position: absolute;
+      font-size: 1.2em;
+      top: 60%;
+      left: 50%;
+      cursor: pointer;
+      overflow: hidden;
+      transform: translateX(-50%);
+      box-sizing: border-box;
+      padding: 10px 40px;
+      border: solid #111F4D 3px;
+      
+      &:hover{
+        :before{
+          left: 0%;
+        } 
+      }
+      
+      &:before{
+        position: absolute;
+        transition: 0.5s ease-in-out;
+        content: "Start";
+        font-size: 1.2em;
+        line-height: 2.2em;
+        text-align: center;
+        background-color: #111F4D;
+        color: #F2F4F7;
+        top: 0;
+        left: -95%;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  
+  .start{
+    transition: 0.8s ease-in-out;
+    opacity: 0;
+    top: -10% !important;
+  }
+  
+  .newscreen{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.8s ease;
+    &.begin{
+      pointer-events: all;
+      opacity: 1;
+    }
+    .maininput{
+      width: calc(60% - 5rem);
+      height: 2em;
+      border: solid #111F4D 3px;
+      box-sizing: border-box;
+      font-size: 1.4em;
+      padding: 0 10px;
+      transform: translateX(-6rem);
+    }
+    .startbutton{
+      position: absolute;
+      display: inline-block;
+      border: solid #111F4D 3px;
+      width: 6rem;
+      box-sizing: border-box;
+      padding: 7px;
+      text-align: center;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #111f4d;
+      color: #f2f4f7;
+      left: 70%;
+      transition: 0.2s ease-in-out;
+      
+      &:hover{
+        background-color: #f2f4f7;
+        color: #111f4d;
+      }
+    }
+  }
+  
+  .whatsthis{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    cursor: pointer;
+    background-image: url("./help.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
